@@ -1,0 +1,24 @@
+def minion_game(string):
+    s = list(string)
+    player1 = 0
+    player2 = 0
+    for q in range(len(s)):
+        if s[q] == 'a' or s[q] == 'e' or s[q] == 'i' or s[q] == 'o' or s[q] == 'u' or s[q] == 'A' or s[q] == 'E' or s[q] == 'I' or s[q] == 'O' or s[q] == 'U':
+            player1 += 1
+            for w in range(q+1, len(s)):
+                player1 += 1
+        else:
+            player2 += 1
+            for r in range(q+1, len(s)):
+                player2 += 1
+    if player1 > player2:
+        print("Kevin", player1)
+    elif player2 > player1:
+        print("Stuart", player2)
+    else:
+        print("Draw")
+    
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
